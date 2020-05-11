@@ -14,9 +14,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-         "form"
-         ".";
+    grid-template-areas: "form" ".";
     width: 100%;
     padding: 20px;
     gap: 15px 40px;
@@ -62,14 +60,27 @@ body {
         display: inline-block;
         width: 100%;
     }
-    @media (min-width: 500px){
+    .container > .item > .actions {
+        display: inline-block;
+        width: 100%;
+    }
+        .item > .actions > .action {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            color: #3366ff;
+            font-size: 14px;
+            line-height: 20px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+@media (min-width: 500px){
         .container{
             grid-template-columns: 1fr 1fr;
             grid-template-areas: 
                  "form form"
                  ". .";
         }
-    }
+}
     @media (min-width: 900px){
         .container{
             grid-template-columns: 1fr 1fr 1fr;
