@@ -58,5 +58,4 @@ function actionRemoveAllTodoItems(event) {
   for (let i = 0; i < allTodoItems.length; i++) {
     allTodoItems[i].remove();
   }
-
 }
