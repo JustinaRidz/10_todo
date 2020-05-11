@@ -17,5 +17,5 @@ let todo_list = [
         created_on: '2020-05-05 15:03',
         deadline: '2020-05-06 17:00',
         status: 'done'
-    }
+    },
 ];
