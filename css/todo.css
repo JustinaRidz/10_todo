@@ -15,16 +15,18 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
+
          "globalActions"
          "newTodo"
          ".";
-    width: 100%;
+      width: 100%;
     padding: 20px;
     gap: 25px 40px;
 }
     .container > .global-actions {
         display: inline-block;
         grid-area: globalActions;
+        cursor: pointer;
     }
     .container > .form {
         display: inline-block;

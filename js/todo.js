@@ -76,3 +76,44 @@ function clearForm() {
   DOMtaskTextarea.value = '';
   DOMdeadlineInput.value = '';
 }
+DOMformAdd.addEventListener('click', addNewTodoItem);
+
+function addNewTodoItem() {
+  const now = new Date();
+  let mintutes = now.getMinutes();
+  let hours = now.getHours();
+  const days = now.getDate();
+  const month = now.getMonth() +1;
+  const year = now.getFullYear;
+
+  if ( minutes < 10 ) {
+    minutes = '0'+ minutes;
+  }
+  if (hours < 10) {
+    hours = '0'+ hours;
+  }
+  if (days < 10 ){
+    days = '0'+ days;
+  }
+  if (month< 10) {
+    month = '0'+ month;
+  }
+   
+  const timeNow = year+ '-' +month+ ' ' +hours+ ':' +mintutes;
+
+
+  let newTodo = {
+    description: DOMtaskTextarea.value.trim(),
+    created_on: formatedDate(),
+    deadline: DOMdeadlineInput.value.trime(),
+    status: 'todo'
+  };
+
+  console.log('TODO: validuojame description');
+  console.log('TODO: validuojame deadline');
+
+  console.log('TODO: created_on NOW/DABAR');
+
+  console.log(newTodo);
+  return;
+}
