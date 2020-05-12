@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,22 @@
 </head>
 <body>
     <div id="todo" class="container">
+        <div class="global-actions">
+            <div class="action remove">Remove all</div>
+        </div>
         <form class="form">
-            NEW TASK FORM
+            <fieldset>
+                <label for="task">Task</label>
+                <textarea name="task"></textarea>
+            </fieldset>
+            <fieldset>
+                <label for="deadline">Deadline</label>
+                <input type="text" name="deadline" placeholder="YYYY-MM-DD HH-MM">
+            </fieldset>
+            <div class="actions">
+                <div class="btn add"> Add new</div>
+                <div class="btn clear">Clear form</div>
+            </div>
         </form>
         <!-- <div class="item">
             <div class="status todo"></div>
@@ -17,7 +32,9 @@
             <div class="deadline">2020-05-06 12:55</div>
         </div> -->
     </div>
+
     <script src="./js/data/todos.js"></script>
     <script src="./js/todo.js"></script>
 </body>
+
 </html>
