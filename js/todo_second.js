@@ -14,13 +14,13 @@ const DOMformClear = DOMformActions.querySelector('.btn.clear');
 
 let DOMitems = null;
 
-function renderList(list) {
-    for (let i = 0; i < list.length; i++) {
+function renderList(list){
+    for (let i = 0; i < list.length; i++){
         renderTodoItem(list[i]);
     }
 }
 
-function renderTodoItem(data) {
+function renderTodoItem(data){
     const HTML = `
         <div class="item">
             <div class="status ${data.status}"></div>
@@ -36,10 +36,10 @@ function renderTodoItem(data) {
     return;
 }
 
-function formatedDate(deltaTime = 0) {
+function formatedDate(deltaTime = 0){
     let now = new Date();
 
-    if (deltaTime !== 0) {
+    if (deltaTime !== 0){
         now = new Date(Date.now() + deltaTime);
     }
 
@@ -49,36 +49,36 @@ function formatedDate(deltaTime = 0) {
     let month = now.getMonth() + 1;
     const year = now.getFullYear();
 
-    if (minutes < 10) {
+    if (minutes < 10 {
         minutes = '0' + minutes;
     }
-    if (hours < 10) {
+    if (hours < 10){
         hours = '0' + hours;
     }
-    if (days < 10) {
+    if (days < 10){
         days = '0' + days;
     }
-    if (month < 10) {
+    if (month < 10){
         month = '0' + month;
     }
 
     return year + '-' + month + '-' + days + ' ' + hours + ':' + minutes;
 }
 
-function removeAllTodos() {
-    for (let i = 4 - 1; i >= 0; i--) {
+function removeAllTodos(){
+    for (let i = 4 - 1; i >= 0; i--){
         removeTodo(i);
     }
 }
 
-function removeTodo(todoIndex) {
+function removeTodo(todoIndex){
     // remove item from DOM
     DOMitems[todoIndex].remove();
     DOMitems = DOMcontainer.querySelectorAll('.item');
 
     // remove item from todo_list (global variable)
     let leftTodos = [];
-    for (let i = 0; i < todo_list.length; i++) {
+    for (let i = 0; i < todo_list.length; i++){
         if (i !== todoIndex) {
             leftTodos.push(todo_list[i]);
         }
@@ -94,8 +94,6 @@ renderList(todo_list);
 
 DOMdeadlineInput.value = formatedDate(86400000);
 
-
     //INIT ACTIONS
-
 
 BTNremoveAll.addEventListener('click', removeAllTodos);
