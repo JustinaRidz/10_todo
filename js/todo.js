@@ -88,7 +88,6 @@ function addNewTodoItem(){
     deadline: DOMdeadlineInput.value.trim(),
     status: 'todo'
   };
-  
   console.log(newTodo);
   
   if (newTodo.description.length === 0){
