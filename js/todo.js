@@ -90,6 +90,7 @@ function addNewTodoItem(){
   };
   
   console.log(newTodo);
+  
   if (newTodo.description.length === 0){
     return alert('ERROR: tuscias aprasymas');
   }
