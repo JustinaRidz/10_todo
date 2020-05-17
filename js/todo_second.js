@@ -35,6 +35,7 @@ function renderTodoItem(data){
             <div class="deadline">${data.deadline}</div>
             <div class="actions">
                 <div class="action remove">Remove</div>
+                <div class="action edit">Edit</div>
             </div>
         </div>`;
 

@@ -117,8 +117,8 @@ body {
                 .form > .actions > .btn.clear:hover {
                 }
                 .form > .actions > .btn.save,
-            .form > .actions > .btn.cancel {
-                display: none;
+                .form > .actions > .btn.cancel {
+                    display: none;
             }
         .form.editing > fieldset.status {
             display: inline-block;
@@ -150,7 +150,6 @@ body {
             height: 10px;
             background-color: #ccc;
         }
-
             .container > .item > .status.todo {
                 background-color: yellow;
             }
