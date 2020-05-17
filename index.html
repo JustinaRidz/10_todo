@@ -7,6 +7,7 @@
     <title>TODO</title>
     <link rel="stylesheet" href="./css/todo.css">
 </head>
+
 <body>
     <div id="todo" class="container">
         <div class="global-actions">
@@ -17,24 +18,28 @@
                 <label for="task">Task</label>
                 <textarea name="task"></textarea>
             </fieldset>
+            <fieldset class="status">
+                <label for="status">Status</label>
+                <div class="switch" data-selected="todo">
+                    <div class="option" data-option="todo">Todo</div>
+                    <div class="option" data-option="progress">In progress</div>
+                    <div class="option" data-option="done">Done</div>
+                </div>
+            </fieldset>
             <fieldset>
                 <label for="deadline">Deadline</label>
                 <input type="text" name="deadline" placeholder="YYYY-MM-DD HH-MM">
             </fieldset>
             <div class="actions">
-                <div class="btn add"> Add new</div>
+                <div class="btn add">Add new</div>
                 <div class="btn clear">Clear form</div>
+                <div class="btn save">Save</div>
+                <div class="btn cancel">Cancel</div>
             </div>
         </form>
-        <!-- <div class="item">
-            <div class="status todo"></div>
-            <p class="description">Pasigaminti kavos</p>
-            <div class="deadline">2020-05-06 12:55</div>
-        </div> -->
     </div>
 
-    <script src="./js/data/todos.js"></script>
-    <script src="./js/todo.js"></script>
+    <script src="./js/todo_second.js"></script>
 </body>
 
 </html>
