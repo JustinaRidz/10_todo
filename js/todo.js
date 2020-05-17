@@ -9,20 +9,20 @@
 
 // render TODO list items
 function renderList(list){
-   const listPlace = document.querySelector('.container');  // susiranda vieta kur reikia HTML(turini) sugeneruoti.
+  const listPlace = document.querySelector('.container');
   let HTML = '';
 
   for (let i = 0; i < list.length; i++){
     const todoItem = list[i];
     HTML += `
-        <div class="item">
-            <div class="status ${todoItem.status}"></div>
-            <p class="description">${todoItem.description}</p>
-            <div class="deadline">${todoItem.deadline}</div>
-            <div class="actions">
-                <div class="action remove">Remove</div>
-            </div>
-        </div>`;
+            <div class="item">
+                <div class="status ${todoItem.status}"></div>
+                <p class="description">${todoItem.description}</p>
+                <div class="deadline">${todoItem.deadline}</div>
+                <div class="actions">
+                    <div class="action remove">Remove</div>
+                </div>
+            </div>`;
   }
 
   //retur listPlase.innerHTML+=HTML; --> pridetas HTML reikiamoje vietoje is galo.
@@ -57,7 +57,6 @@ function actionRemoveAllTodoItems(event){
   const allTodoItems = event.target
     .closest('.container')
     .querySelectorAll('.item');
-
   for (let i = 0; i < allTodoItems.length; i++){
     allTodoItems[i].remove();
   }
@@ -71,7 +70,7 @@ const DOMformActions = DOMform.querySelector('.actions');
 const DOMformAdd = DOMformActions.querySelector('.btn.add');
 const DOMformClear = DOMformActions.querySelector('.btn.clear');
 
-DOMdeadlineInput.value = formatedDate(86400000);   //24*60*60*1000
+DOMdeadlineInput.value = formatedDate(86400000);             // 24*60*60*1000
 
 DOMformClear.addEventListener('click', clearForm);
 
@@ -79,6 +78,7 @@ function clearForm(){
   DOMtaskTextarea.value = '';
   DOMdeadlineInput.value = '';
 }
+
 DOMformAdd.addEventListener('click', addNewTodoItem);
 
 function addNewTodoItem(){
@@ -88,9 +88,8 @@ function addNewTodoItem(){
     deadline: DOMdeadlineInput.value.trim(),
     status: 'todo'
   };
-  
   console.log(newTodo);
-  
+
   if (newTodo.description.length === 0){
     return alert('ERROR: tuscias aprasymas');
   }
@@ -109,6 +108,7 @@ function formatedDate(deltaTime = 0){
   if (deltaTime !== 0) {
     now = new Date(Date.now() + deltaTime); // ()... +(-) 7*24*3600*1000)
   }
+
   let minutes = now.getMinutes();
   let hours = now.getHours();
   let days = now.getDate();
@@ -128,5 +128,5 @@ function formatedDate(deltaTime = 0){
     month = '0' + month;
   }
 
-  return year + '-' + month + '-' + days + ' ' + hours + ':' + minutes;
+  return year+ '-' +month+ '-' +days+ ' ' +hours+ ':' +minutes;
 } 
